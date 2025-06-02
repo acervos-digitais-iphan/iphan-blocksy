@@ -1,0 +1,276 @@
+{
+	"version": 2,
+
+
+	"settings": {
+
+		"appearanceTools": true,
+
+		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
+			"units": [
+				"px",
+				"em",
+				"rem",
+				"%",
+				"vh",
+				"vw"
+			],
+           "spacingSizes": [
+				{
+					"name": "Minúsculo",
+					"size": "0.5rem",
+					"slug": "10"
+				},
+                {
+					"name": "Pequeno",
+					"size": "1.0rem",
+					"slug": "20"
+				},
+                {
+					"name": "Menor",
+					"size": "clamp(1.25rem, 0.45vi + 1.14rem, 1.5rem)",
+					"slug": "30"
+				},
+                {
+					"name": "Médio",
+					"size": "clamp(1.63rem, 0.68vi + 1.45rem, 2rem)",
+					"slug": "40"
+				},
+                {
+					"name": "Maior",
+					"size": "clamp(2.5rem, 0.91vi + 2.27rem, 3rem)",
+					"slug": "50"
+				},
+				{
+					"name": "Grande",
+					"size": "clamp(3.75rem, 1.36vi + 3.41rem, 4.5rem)",
+					"slug": "60"
+				},
+                {
+					"name": "Enorme",
+					"size": "clamp(5rem, 1.82vi + 4.55rem, 6rem)",
+					"slug": "70"
+				}
+            ]
+		},
+
+		"layout": {
+			"contentSize": "var(--theme-block-max-width)",
+			"wideSize": "var(--theme-block-wide-max-width)",
+			"fullSize": "none"
+		},
+
+		"typography": {
+			"fluid": false,
+			"fontSizes": [
+				{
+					"fluid": false,
+					"size": "12px",
+					"slug": "x-small",
+					"name": "Muito pequeno"
+				},
+				{
+					"fluid": {
+						"min": "12px",
+						"max": "14px"
+					},
+					"size": "14px",
+					"slug": "small",
+					"name": "Pequeno"
+				},
+				{
+					"fluid": {
+						"min": "14px",
+						"max": "16px"
+					},
+					"size": "16px",
+					"slug": "default",
+					"name": "Padrão"
+				},
+				{
+					"fluid": {
+						"min": "16px",
+						"max": "18px"
+					},
+					"size": "18px",
+					"slug": "medium",
+					"name": "Médio"
+				},
+				{
+					"fluid": {
+						"min": "16px",
+						"max": "20px"
+					},
+					"size": "20px",
+					"slug": "large",
+					"name": "Grande"
+				},
+				{
+					"fluid": {
+						"min": "18px",
+						"max": "22px"
+					},
+					"size": "22px",
+					"slug": "x-large",
+					"name": "Muito grande"
+				},
+				{
+					"fluid": {
+						"min": "24px",
+						"max": "32px"
+					},
+					"size": "32px",
+					"slug": "xx-large",
+					"name": "Enorme"
+				},
+				{
+					"fluid": {
+						"min": "34px",
+						"max": "38px"
+					},
+					"size": "38px",
+					"slug": "xxx-large",
+					"name": "Gigante"
+				},
+				{
+					"fluid": {
+						"min": "42px",
+						"max": "60px"
+					},
+					"size": "38px",
+					"slug": "huge",
+					"name": "Destaque"
+				}
+			]
+		},
+		"color": {
+			"defaultDuotone": false,
+			"duotone": [
+				{
+					"colors": [
+						"#4B0C0E",
+						"#CA4D37"
+					],
+					"name": "Vermelhos",
+					"slug": "red-and-red"
+				},
+				{
+					"colors": [
+						"#A83021",
+						"#f6f4f3"
+					],
+					"name": "Vermelho e Branco",
+					"slug": "red-and-white"
+				},
+				{
+					"colors": [
+						"#000000",
+						"#CA4D37"
+					],
+					"name": "Vermelho e Preto",
+					"slug": "red-and-black"
+				},
+				{
+					"colors": [
+						"#215C44",
+						"#f6f4f3"
+					],
+					"name": "Verde e Branco",
+					"slug": "green-and-white"
+				},
+				{
+					"colors": [
+						"#000000",
+						"#34946A"
+					],
+					"name": "Verde e Preto",
+					"slug": "green-and-black"
+				},
+				{
+					"colors": [
+						"#D58803",
+						"#f6f4f3"
+					],
+					"name": "Amarelo e Branco",
+					"slug": "yellow-and-white"
+				},
+				{
+					"colors": [
+						"#000000",
+						"#D58803"
+					],
+					"name": "Amarelo e Preto",
+					"slug": "yellow-and-black"
+				},
+				{
+					"colors": [
+						"#000000",
+						"#f6f4f3"
+					],
+					"name": "Branco e Preto",
+					"slug": "white-and-black"
+				},
+				{
+					"colors": [
+						"#4e4b49",
+						"#f6f4f3"
+					],
+					"name": "Branco e Cinza",
+					"slug": "white-and-gray"
+				},
+				{
+					"colors": [
+						"#A83021",
+						"#EFC94B"
+					],
+					"name": "Vermelho e Amarelo",
+					"slug": "red-and-yellow"
+				},
+				{
+					"colors": [
+						"#215C44",
+						"#EFC94B"
+					],
+					"name": "Verde e Amarelo",
+					"slug": "green-and-yellow"
+				}
+			]
+		}
+	},
+
+
+	"styles": {
+		"elements": {
+			"link": {
+				"typography": { 
+					"textDecoration": false 
+				}
+			},
+			"button": {
+				"spacing": {
+					"padding": false
+				},
+				"border": {
+					"width": false
+				},
+				"color": {
+					"background": false,
+					"text": false
+				},
+				"typography": {
+					"fontFamily": false,
+					"fontSize": false,
+					"lineHeight": false,
+					"textDecoration": false
+				}
+			}
+		},
+
+		"spacing": {
+			"blockGap": "var(--theme-content-spacing)"
+		}
+	}
+}

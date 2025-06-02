@@ -1,0 +1,413 @@
+/**
+ * Theme Name: IPHAN Blocksy
+ * Description: Tema filho do Blocksy para projetos WordPress do IPHAN
+ * Author: mateuswetah
+ * Template: blocksy
+ * Text Domain: iphan-blocksy
+ * Version: 0.0.2
+ */
+:root {
+    --iphan-blocksy-button-icon-width: 2.375em;
+    --iphan-blocksy-button-icon-spacing: 16px;
+    --iphan-blocksy-border-radius: 0;
+    --menu-indicator-height: 1px;
+}
+
+/* Abre espaço para o botão do menu Gov.br, caso exista */
+.govbr-institutional + .ct-header [data-row*="middle"] {
+    padding-left: 100px;
+}
+
+/* Padronizando o estilo dos ícones do header */
+[data-header*="type-1"] [data-id="search"] {
+    --secondColor: var(--theme-palette-color-9);
+    --secondColorHover: var(--theme-palette-color-10);
+    --toggle-button-radius: 28px;
+    --toggle-button-background: var(--secondColor, rgba(224, 229, 235, 0.9));
+    --toggle-button-padding: 12px;
+}
+[data-header*="type-1"] [data-id="search"]:hover,
+.ct-header-account:hover {
+    --toggle-button-background: var(--secondColorHover, rgba(224, 229, 235, 0.9));
+}
+[data-header*="type-1"] [class*="ct-toggle"]:focus,
+.ct-header-account:focus {
+    --toggle-button-background: var(--theme-palette-color-1);
+}
+.ct-header-account {
+    --theme-icon-size: 20px;
+    --theme-icon-color: var(--theme-palette-color-8);
+    --theme-icon-hover-color: var(--theme-palette-color-8);
+    --secondColor: var(--theme-palette-color-9);
+    --secondColorHover: var(--theme-palette-color-10);
+    --toggle-button-radius: 28px;
+    --toggle-button-background: var(--secondColor, rgba(224, 229, 235, 0.9));
+    --toggle-button-padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: var(--toggle-button-position, relative);
+    z-index: var(--toggle-button-z-index, initial);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--toggle-button-size);
+    height: var(--toggle-button-size);
+    flex: 0 0 var(--toggle-button-size);
+    margin-inline-start: var(--toggle-button-margin-start, auto);
+    margin-inline-end: var(--toggle-button-margin-end, initial);
+    transition: border-color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955),background .12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    padding: var(--toggle-button-padding, 0px) !important;
+    box-shadow: var(--toggle-button-shadow, none) !important;
+    border-radius: var(--toggle-button-radius, 0) !important;
+    border-width: var(--toggle-button-border-width, 0px) !important;
+    border-style: var(--toggle-button-border-style, solid) !important;
+    border-color: var(--toggle-button-border-color, transparent) !important;
+    background: var(--toggle-button-background, transparent) !important;
+}
+[data-header*="type-1"] [data-id="account"][data-state="in"] {
+    --toggle-button-background: var(--theme-palette-color-21);
+}
+[data-header*="type-1"] [data-id="account"][data-state="in"]:hover {
+    --toggle-button-background: var(--theme-palette-color-22);
+}
+[data-header*="type-1"] [data-id="account"][data-state="in"]:focus {
+    --toggle-button-background: var(--theme-palette-color-23);
+}
+[data-header*="type-1"] [class*="ct-toggle-close"]:not([data-type="type-1"]) {
+    --toggle-button-radius: 28px;
+}
+
+/* Dropdown do menu do header com + ao invés de setinha */
+.ct-toggle-dropdown-desktop::after {
+    content: '+';
+}
+.ct-toggle-dropdown-desktop svg {
+    display: none;
+}
+
+/* Ajustes em elementos do menu mobile */
+.mobile-menu .ct-sub-menu-parent {
+    flex-direction: row-reverse;
+}
+.ct-panel-actions .ct-panel-heading {
+    font-size: 22px !important;
+    font-weight: bold !important;
+}
+
+
+/* Botão com imagem inline, estilo ícone */
+.wp-block-button__link:has( img ) {
+    position: relative;
+    padding-left: calc(var(--iphan-blocksy-button-icon-width) + 2 * var(--iphan-blocksy-button-icon-spacing) + 1em);
+}
+.wp-block-button__link:has( img ) img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--iphan-blocksy-button-icon-width) + 2 * var(--iphan-blocksy-button-icon-spacing)) !important;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 10px;
+    background: var(--theme-button-background-hover-color);
+    border-top-right-radius: 100em;
+    border-bottom-right-radius: 100em;
+}
+.wp-block-button__link:hover:has( img )> img {
+    background: color-mix(in srgb, var(--theme-button-background-hover-color) 100%, black 20%);
+}
+
+/* Faz com que os campos de informação da galeria de mídias tenham o estilod a legenda oculta */
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content {
+    position: relative;
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata.has-name.hide-name:not(.has-caption):not(.has-description),
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata.has-description.hide-description:not(.has-name):not(.has-caption),
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata.has-caption.hide-caption:not(.has-name):not(.has-description) {
+    display: none;
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: var(--theme-palette-color-21);
+    color: var(--theme-palette-color-8);
+    --tainacan-media-metadata-color: var(--theme-palette-color-8);
+    padding: 0.625rem 0.875rem;
+    margin: 0 !important;
+    border-radius: var(--iphan-blocksy-border-radius); 
+    font-size: 0 !important;
+    --theme-font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    max-height: 2.875rem;
+    min-width: 2.875rem;
+    max-width: 2.875rem;
+    min-height: 2.875rem;
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata a {
+    color: var(--theme-palette-color-8);
+    text-decoration: underline;
+    background-color: transparent;
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata .swiper-slide-metadata__name,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata .swiper-slide-metadata__caption,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata .swiper-slide-metadata__description {
+    font-size: 0 !important;
+    --theme-font-size: 0 !important;
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata::before {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.75rem;
+    content: "i";
+    color: var(--theme-palette-color-8);
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:hover,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus-within,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:hover .swiper-slide-metadata__name,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus .swiper-slide-metadata__name,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus-within .swiper-slide-metadata__name,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:hover .swiper-slide-metadata__description,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus .swiper-slide-metadata__description,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus-within .swiper-slide-metadata__description,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:hover .swiper-slide-metadata__caption,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus .swiper-slide-metadata__caption,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus-within .swiper-slide-metadata__caption {
+    font-size: 1rem !important;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: var(--theme-palette-color-21);
+}
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:hover::before,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus::before,
+.tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus-within::before {
+    font-size: 0;
+    content: '';
+}
+
+/* Força a galeria de mídias a ter fundo transparente */
+.tainacan-media-component {
+    --tainacan-media-background: transparent !important;
+}
+
+/* Mantém um espaçamento mínimo entre os componentes de mídia */
+.tainacan-media-component-wrapper-spacing--minimum .tainacan-media-component {
+    gap: 1.25em
+}
+
+/* Estilo das setinhas do swiper */
+.cb-carousel-block .swiper-button-next,
+.cb-carousel-block .swiper-button-prev,
+.wp-block-tainacan-carousel-items-list .tainacan-carousel .swiper-button-prev,
+.wp-block-tainacan-carousel-items-list .tainacan-carousel .swiper-button-next,
+.tainacan-media-component .swiper-button-next,
+.tainacan-media-component .swiper-button-prev {
+    background-color: var(--theme-palette-color-21) !important;
+    color: var(--theme-palette-color-8) !important;
+    border-radius: 100em;
+}
+.tainacan-media-component .swiper-button-next,
+.tainacan-media-component .swiper-button-prev {
+    padding: 1.5em;
+    width: var(--swiper-navigation-size);
+}
+.cb-carousel-block {
+    --wp--custom--carousel-block--navigation-size: 1.0em;
+}
+.cb-carousel-block .swiper-button-next,
+.cb-carousel-block .swiper-button-prev {
+    width: 1.5em;
+    height: 1.5em;
+}
+.cb-carousel-block .swiper-button-next::after,
+.cb-carousel-block .swiper-button-prev::after {
+    font-family: "TainacanIcons";
+}
+.cb-carousel-block .swiper-button-prev::after {
+    content: 'previous';
+}
+.wp-block-tainacan-carousel-items-list .tainacan-carousel .swiper-button-prev svg,
+.wp-block-tainacan-carousel-items-list .tainacan-carousel .swiper-button-next svg,
+.tainacan-media-component .swiper-button-next svg,
+.tainacan-media-component .swiper-button-prev svg {
+    fill: var(--theme-palette-color-8) !important;
+}
+.cb-carousel-block .swiper-button-next,
+.cb-carousel-block .swiper-button-prev,
+.tainacan-media-component .tainacan-media-component__swiper-main .swiper-button-next:not(.swiper-button-has-svg)::after,
+.tainacan-media-component .tainacan-media-component__swiper-main .swiper-button-prev:not(.swiper-button-has-svg)::after,
+.tainacan-media-component .tainacan-media-component__swiper-thumbs .swiper-button-next:not(.swiper-button-has-svg)::after,
+.tainacan-media-component .tainacan-media-component__swiper-thumbs .swiper-button-prev:not(.swiper-button-has-svg)::after {
+    font-size: 1.875em;
+}
+.tainacan-media-component .tainacan-media-component__swiper-main .swiper-button-next.swiper-button-has-svg svg,
+.tainacan-media-component .tainacan-media-component__swiper-main .swiper-button-prev.swiper-button-has-svg svg,
+.tainacan-media-component .tainacan-media-component__swiper-thumbs .swiper-button-next.swiper-button-has-svg svg,
+.tainacan-media-component .tainacan-media-component__swiper-thumbs .swiper-button-prev.swiper-button-has-svg svg {
+    min-width: calc(var(--swiper-navigation-size) * 0.875);
+    min-height: calc(var(--swiper-navigation-size) * 0.875);
+}
+
+/* Itens ativos no swiper */
+.tainacan-media-component .tainacan-media-component__swiper-thumbs li.swiper-slide img {
+    border: 3px solid transparent !important;
+    filter: brightness(0.9);
+    transition: filter 0.2s ease, border-color 0.2s ease;
+}
+.tainacan-media-component .tainacan-media-component__swiper-thumbs li.swiper-slide:hover img {
+    filter: brightness(1);
+}
+.tainacan-media-component .tainacan-media-component__swiper-thumbs li.swiper-slide.swiper-slide-thumb-active img {
+    border-color: var(--theme-palette-color-23) !important;
+}
+.tainacan-gallery-above-title .tainacan-media-component .tainacan-media-component__swiper-thumbs img,
+.tainacan-item-single-page .tainacan-media-component .tainacan-media-component__swiper-thumbs img {
+    border-radius: 0;
+}
+
+/* Estilo das listas no rodapé */
+.ct-footer ul.wp-block-list {
+    list-style: none;
+    padding-left: 0;
+}
+.ct-footer ul.wp-block-list li {
+    margin: 0.875em 0;
+}
+
+/* 
+ * Links em blocos de grupo. Como o Gutenberg não possui opção de background no hover,
+ * mapeamos as cores manualmente para correspondências próximas...
+ */
+.wp-block-group.is-linked.has-palette-color-1-background-color:hover {
+    background-color: var(--theme-palette-color-2) !important;
+}
+.wp-block-group.is-linked.has-palette-color-2-background-color:hover {
+    background-color: var(--theme-palette-color-11) !important;
+}
+.wp-block-group.is-linked.has-palette-color-3-background-color:hover {
+    background-color: var(--theme-palette-color-25) !important;
+}
+.wp-block-group.is-linked.has-palette-color-4-background-color:hover {
+    background-color: var(--theme-palette-color-3) !important;
+}
+.wp-block-group.is-linked.has-palette-color-5-background-color:hover {
+    background-color: var(--theme-palette-color-4) !important;
+}
+.wp-block-group.is-linked.has-palette-color-6-background-color:hover {
+    background-color: var(--theme-palette-color-5) !important;
+}
+.wp-block-group.is-linked.has-palette-color-7-background-color:hover {
+    background-color: var(--theme-palette-color-6) !important;
+}
+.wp-block-group.is-linked.has-palette-color-8-background-color:hover {
+    background-color: var(--theme-palette-color-7) !important;
+}
+.wp-block-group.is-linked.has-palette-color-9-background-color:hover {
+    background-color: var(--theme-palette-color-10) !important;
+}
+.wp-block-group.is-linked.has-palette-color-10-background-color:hover {
+    background-color: var(--theme-palette-color-9) !important;
+}
+.wp-block-group.is-linked.has-palette-color-11-background-color:hover {
+    background-color: var(--theme-palette-color-10) !important;
+}
+.wp-block-group.is-linked.has-palette-color-12-background-color:hover {
+    background-color: var(--theme-palette-color-11) !important;
+}
+.wp-block-group.is-linked.has-palette-color-13-background-color:hover {
+    background-color: var(--theme-palette-color-12) !important;
+}
+.wp-block-group.is-linked.has-palette-color-14-background-color:hover {
+    background-color: var(--theme-palette-color-15) !important;
+}
+.wp-block-group.is-linked.has-palette-color-15-background-color:hover {
+    background-color: var(--theme-palette-color-14) !important;
+}
+.wp-block-group.is-linked.has-palette-color-17-background-color:hover {
+    background-color: var(--theme-palette-color-15) !important;
+}
+.wp-block-group.is-linked.has-palette-color-18-background-color:hover {
+    background-color: var(--theme-palette-color-17) !important;
+}
+.wp-block-group.is-linked.has-palette-color-19-background-color:hover {
+    background-color: var(--theme-palette-color-18) !important;
+}
+.wp-block-group.is-linked.has-palette-color-20-background-color:hover {
+    background-color: var(--theme-palette-color-21) !important;
+}
+.wp-block-group.is-linked.has-palette-color-21-background-color:hover {
+    background-color: var(--theme-palette-color-20) !important;
+}
+.wp-block-group.is-linked.has-palette-color-22-background-color:hover {
+    background-color: var(--theme-palette-color-21) !important;
+}
+.wp-block-group.is-linked.has-palette-color-23-background-color:hover {
+    background-color: var(--theme-palette-color-22) !important;
+}
+.wp-block-group.is-linked.has-palette-color-24-background-color:hover {
+    background-color: var(--theme-palette-color-23) !important;
+}
+.wp-block-group.is-linked.has-palette-color-25-background-color:hover {
+    background-color: var(--theme-palette-color-3) !important;
+}
+.wp-block-group.is-linked.has-palette-color-26-background-color:hover {
+    background-color: var(--theme-palette-color-25) !important;
+}
+.wp-block-group.is-linked.has-palette-color-27-background-color:hover {
+    background-color: var(--theme-palette-color-26) !important;
+}
+.wp-block-group.is-linked.has-palette-color-28-background-color:hover {
+    background-color: var(--theme-palette-color-27) !important;
+}
+.wp-block-group.is-linked.has-palette-color-29-background-color:hover {
+    background-color: var(--theme-palette-color-28) !important;
+}
+.wp-block-group.is-linked.has-palette-color-30-background-color:hover {
+    background-color: var(--theme-palette-color-29) !important;
+}
+
+
+/* Bloco de posts relacionados do Blocksy */
+.ct-related-posts article .related-entry-title {
+    display: inline-block;
+    position: relative;
+    background-color: var(--theme-palette-color-13);
+    padding: 1.25rem 1.5rem;
+    width: calc(100% - 2rem);
+    border-radius: var(--iphan-blocksy-border-radius);
+    transition: width 0.2s ease, padding 0.2s ease;
+    cursor: pointer;
+}
+.ct-related-posts article:hover .related-entry-title {
+    width: calc(100% - 1rem);
+    padding-left: 2rem;
+}
+.ct-related-posts article .related-entry-title a::before {
+    content: '> ';
+    font-size: 0;
+    transition: font-size 0.2s ease;
+}
+.ct-related-posts article:hover .related-entry-title a::before {
+    font-size: 1em;
+}
+.ct-related-posts .ct-media-container {
+    border-radius: 0 !important;
+}
+.ct-related-posts article img {
+    transition: transform 0.2s ease;
+}
+.ct-related-posts article:hover img {
+    transform: scale(1.1);
+}
+.ct-related-posts .ct-media-container + .related-entry-title {
+    margin-top: calc(-1em - 1.5rem - 1.25rem);
+} 
+
+
+/* Bloco de grupop com fundo em cor multiply */
+.wp-block-group.is-style-iphan-background-multiply {
+    background-blend-mode: multiply;
+}
