@@ -190,17 +190,16 @@ if ( function_exists('register_block_style') ) {
                         width: 16px;
                         height: 16px;
                         position: absolute;
-                        transform: scaleY(1.25) rotate(245deg);
-                        bottom: -4px;
+                        bottom: -8px;
                         left: calc(50% - 8px);
                         transition: background-color 0.2s ease;
                         z-index: 1;
                         border-radius: 100em;
-                        background-image: conic-gradient(at 49.5% 50%, transparent 135deg, transparent 225deg, var(--theme-palette-color-22), var(--theme-palette-color-22) 135deg);
+                        background-color: var(--theme-palette-color-22);
                     }
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:hover > .parent::before,
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:focus > .parent::before {
-                        background-image: conic-gradient(at 49.5% 50%, transparent 135deg, transparent 225deg, var(--theme-palette-color-19), var(--theme-palette-color-19) 135deg);
+                        background-color: var(--theme-palette-color-19);
                     }
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > .parent::after {
                         content: "";

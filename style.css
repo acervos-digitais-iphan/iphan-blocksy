@@ -95,6 +95,11 @@
     font-weight: bold !important;
 }
 
+/* Pequenos ajustes nos breadcrumbs */
+.ct-breadcrumbs .last-item {
+    font-weight: bold;
+}
+
 
 /* Botão com imagem inline, estilo ícone */
 .wp-block-button__link:has( img ) {
@@ -369,7 +374,6 @@
     background-color: var(--theme-palette-color-29) !important;
 }
 
-
 /* Bloco de posts relacionados do Blocksy */
 .ct-related-posts article .related-entry-title {
     display: inline-block;
@@ -406,8 +410,45 @@
     margin-top: calc(-1em - 1.5rem - 1.25rem);
 } 
 
+/*-------------------- ESTILOS ADICIONAIS --------------------*/
+/*
+ * Os estilos a seguir foiram implementados baseando-se no design do BCR. 
+ * Para um uso mais genérico do tema, provavelmente devemos mover eles para
+ * o o menu personalizar no futuro.
+ */
+:root {
+    --iphan-blocksy-border-radius: 0 100% 100% 0;
+}
 
-/* Bloco de grupop com fundo em cor multiply */
+/* Bloco de grupo com fundo em cor multiply */
 .wp-block-group.is-style-iphan-background-multiply {
     background-blend-mode: multiply;
+}
+
+/* Botão circular que fica acima do banner da home */
+.wp-block-group.is-style-iphan-botao-circular {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+.wp-block-group.is-style-iphan-botao-circular > * {
+    position: relative;
+}
+.wp-block-group.is-style-iphan-botao-circular::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 34px;
+    height: 22px;
+    border-radius: 0  0 100em 100em;
+    border: 0px solid var(--theme-palette-color-22);
+    background-color: var(--theme-palette-color-13);
+    transition: height 0.2s ease, width 0.2s ease, background-color 0.2s ease, border 0.2s ease;
+}
+.wp-block-group.is-style-iphan-botao-circular:hover::before {
+    height: 100%;
+    width: 100%;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
 }
