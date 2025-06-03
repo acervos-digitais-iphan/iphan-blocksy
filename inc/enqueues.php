@@ -16,6 +16,12 @@ function iphan_blocksy_enqueue_scripts () {
 		//wp_enqueue_script( 'iphan-tainacan-single-script', get_stylesheet_directory_uri() . '/assets/js/iphan-tainacan-single.js', array(), $child_theme_version, true );
 	}
 
+	// Enfileira os estilos e scripts da pagina de lista de itens do Tainacan
+	if ( iphan_blocksy_is_tainacan_item_archive() ) {
+		wp_enqueue_style( 'iphan-tainacan-archive-style', get_stylesheet_directory_uri() . '/assets/css/iphan-tainacan-archive.css', array(), $child_theme_version );
+		//wp_enqueue_script( 'iphan-tainacan-archive-script', get_stylesheet_directory_uri() . '/assets/js/iphan-tainacan-archive.js', array(), $child_theme_version, true );
+	}
+
 	// Enfileira a fonte de ícones Phosphor
 	wp_enqueue_style( 'phosphor-icons', 'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.min.css' );
 };
