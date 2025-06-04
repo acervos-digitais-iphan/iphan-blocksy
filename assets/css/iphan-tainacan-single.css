@@ -1,11 +1,7 @@
 /* Áreas de template especiais para o Iphan Blocksy */
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar {
-    grid-area: metadataSidebar;
     background-color: var(--theme-palette-color-8);
     padding: 2.625rem;
-}
-.tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--collapses {
-    grid-area: metadataCollapses;
 }
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--default,
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--collapses {
@@ -13,7 +9,6 @@
     margin-inline: auto;
 }
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--tabs {
-    grid-area: metadataTabs;
     background-color: var(--theme-palette-color-6);
     padding: var(--theme-content-vertical-spacing) 0 0 0;
     position: relative;
@@ -28,8 +23,8 @@
     height: 100%;
     background-color: var(--theme-palette-color-6);
     position: absolute;
-    left: calc(-1 * (100vw - var(--wp--style--global--content-size)) / 2);
-    right: calc(-1 * (100vw - var(--wp--style--global--content-size)) / 2);
+    left: calc(-1 * (100vw - 100%) / 2);
+    right: calc(-1 * (100vw - 100%) / 2);
     top: 0;
     bottom: 0;
     z-index: -1;
@@ -42,91 +37,66 @@
     border: var(--wp--preset--spacing--40) solid var(--theme-palette-color-8);
     background-size: var(--wp--preset--spacing--50) auto;
 }
-.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-dam {
-    grid-template-areas:
-        'document'
-        'attachments'
-        'related'
-        'metadata'
-        'metadataCollapses'
-        'metadataSidebar'
-        'metadataTabs';
+.tainacan-item-single-page .tainacan-item-single {
+    grid-template-areas: none;
     grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: var(--wp--preset--spacing--50);
 }
-.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-dma {
-    grid-template-areas:
-        'document'
-        'related'
-        'metadata'
-        'metadataCollapses'
-        'metadataTabs'
-        'metadataSidebar'
-        'attachments';
-    grid-template-columns: 100%;
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--gallery,
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--documents,
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--attachments,
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--items-related-to-this, 
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--metadata,
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--metadata-sections,
+.tainacan-item-single-page .tainacan-item-single > .iphan-blocksy-metadata-section--default,
+.tainacan-item-single-page .tainacan-item-single > .iphan-blocksy-metadata-section--collapses,
+.tainacan-item-single-page .tainacan-item-single > .iphan-blocksy-metadata-section--tabs {
+    grid-area: auto; /* Precisa ser para sobrescrever a lógica de posicionamento do plugin de integração com Blocksy */
 }
-.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mda {
-    grid-template-areas:
-        'metadata'
-        'metadataSidebar'
-        'metadataCollapses'
-        'document'
-        'attachments'
-        'related'
-        'metadataTabs';
-    grid-template-columns: 100%;
+.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-dma .tainacan-item-section--attachments,
+.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mda .tainacan-item-section--document,
+.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mda .tainacan-item-section--gallery {
+    order: 4;
 }
-.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-gtm  {
-    grid-template-areas:
-            'related'
-            'metadata'
-            'metadataSidebar'
-            'metadataCollapses'
-            'metadataTabs';
-    grid-template-columns: 100%;
+.tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mda .tainacan-item-section--attachments {
+    order: 5;
 }
 
 @media only screen and (min-width: 960px) {
-    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-dam:has(.iphan-blocksy-metadata-section--sidebar) {
-        grid-template-areas:
-            'metadataSidebar document'
-            'metadataSidebar attachments'
-            'metadataSidebar related'
-            'metadataSidebar metadata'
-            'metadataSidebar metadataCollapses'
-            'metadataTabs metadataTabs';
+    .tainacan-item-single-page .tainacan-item-single:has(.iphan-blocksy-metadata-section--sidebar) {
         grid-template-columns: 20% calc(80% - var(--wp--preset--spacing--70));
-        gap: var(--wp--preset--spacing--70);
+        gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--70);
     }
-    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-dma:has(.iphan-blocksy-metadata-section--sidebar) {
-        grid-template-areas:
-            'metadataSidebar document'
-            'metadataSidebar related'
-            'metadataSidebar metadata'
-            'metadataSidebar metadataCollapses'
-            'metadataTabs metadataTabs'
-            'attachments attachments';
-        grid-template-columns: 20% calc(80% - var(--wp--preset--spacing--70));
-        gap: var(--wp--preset--spacing--70);
+    .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--gallery,
+    .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--documents,
+    .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--attachments,
+    .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--items-related-to-this,
+    .tainacan-item-single-page .tainacan-item-single:has(.iphan-blocksy-metadata-section--sidebar) > .iphan-blocksy-metadata-section--default,
+    .tainacan-item-single-page .tainacan-item-single:has(.iphan-blocksy-metadata-section--sidebar) > .iphan-blocksy-metadata-section--collapses {
+        grid-column: 2;
+        grid-row: auto;
     }
-    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mda:has(.iphan-blocksy-metadata-section--sidebar) {
-        grid-template-areas:
-            'metadataSidebar metadata'
-            'metadataSidebar document'
-            'metadataSidebar attachments'
-            'metadataSidebar related'
-            'metadataSidebar metadataCollapses'
-            'metadataTabs metadataTabs';
-        grid-template-columns: 20% calc(80% - var(--wp--preset--spacing--70));
-        gap: var(--wp--preset--spacing--70);
+    .tainacan-item-single-page .tainacan-item-single > .iphan-blocksy-metadata-section--sidebar {
+        grid-column: 1;
+        grid-row: 1 / -1;
     }
-    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-gtm:has(.iphan-blocksy-metadata-section--sidebar)  {
-        grid-template-areas:
-                'metadataSidebar related'
-                'metadataSidebar metadata'
-                'metadataSidebar metadataCollapses'
-                'metadataTabs metadataTabs';
-        grid-template-columns: 20% calc(80% - var(--wp--preset--spacing--70));
-        gap: var(--wp--preset--spacing--70);
+    .tainacan-item-single-page .tainacan-item-single:has(.iphan-blocksy-metadata-section--sidebar) > .iphan-blocksy-metadata-section--tabs {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-gm > .tainacan-item-section--attachments,
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-gm > .tainacan-item-section--document,
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-gm > .tainacan-item-section--gallery {
+        grid-column: 1;
+    }
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-gm > .iphan-blocksy-metadata-section--sidebar {
+        grid-row: 2;
+    }
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mg > .iphan-blocksy-metadata-section--default,
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mg > .iphan-blocksy-metadata-section--collapses,
+    .tainacan-item-single-page .tainacan-item-single.tainacan-item-single--layout-type-mg > .iphan-blocksy-metadata-section--tabs {
+        grid-column: 1;
     }
 }
 

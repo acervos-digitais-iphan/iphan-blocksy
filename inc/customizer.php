@@ -47,3 +47,65 @@ function iphan_blocksy_options_panel($options) {
     return $options;
 }
 add_filter( 'blocksy_extensions_customizer_options', 'iphan_blocksy_options_panel', 10, 1 );
+
+/** Adiciona opções em seções específicas das opções da página do item Tainacan */
+function iphan_blocksy_custom_post_types_single_options( $options, $post_type, $post_type_object ) {
+
+	if ( defined ('TAINACAN_VERSION') ) {
+
+        if ( method_exists( \Tainacan\Theme_Helper::get_instance(), 'is_post_type_a_collection' ) ) {
+            $is_collection = \Tainacan\Theme_Helper::get_instance()->is_post_type_a_collection($post_type);
+        } else {
+            $collections_post_types = \Tainacan\Repositories\Repository::get_collections_db_identifiers();
+            $is_collection = in_array($post_type, $collections_post_types);
+        }
+
+        if ( $is_collection ) {
+            if (
+                isset( $options['options'] ) &&
+                isset( $options['options'][$post_type . '_single_section_options'] ) &&
+                isset( $options['options'][$post_type . '_single_section_options']['inner-options'] )
+            ) {
+                foreach ( $options['options'][$post_type . '_single_section_options']['inner-options'] as $key => $option ) {
+                    if ( is_array($option) ) {
+                        foreach ( $option as $sub_key => $sub_option ) {
+                            if ( 
+                                is_array($sub_option) &&
+                                isset( $sub_option[$post_type . '_single_display_items_related_to_this'] ) &&
+                                isset( $sub_option[$post_type . '_single_display_items_related_to_this']['inner-options'] )
+                            ) {
+                                $options['options']
+                                    [$post_type . '_single_section_options']
+                                    ['inner-options']
+                                    [$key]
+                                    [$sub_key]
+                                    [$post_type . '_single_display_items_related_to_this']
+                                    ['inner-options']
+                                    [$post_type . '_single_iphan_blocksy_items_related_to_this_position']
+                                    = [
+                                        'label'   => 'Posição da seção de itens relacionados a este',
+                                        'type'    => 'ct-radio',
+                                        'value'   => 'bottom',
+                                        'view'    => 'text',
+                                        'design'  => 'block',
+                                        'divider' => 'top',
+                                        'choices' => [
+                                            'top'    => 'Abaixo da galeria',
+                                            'bottom' => 'Abaixo dos metadados',
+                                        ],
+                                        'sync'    => true,
+                                    ];
+
+                            }
+                        }
+                    }
+                  
+                }
+            }
+        }
+    }
+    
+    return $options;
+}
+add_filter( 'blocksy:custom_post_types:single-options', 'iphan_blocksy_custom_post_types_single_options', 10, 3 );
+		

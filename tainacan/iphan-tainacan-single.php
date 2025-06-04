@@ -13,6 +13,7 @@ $metadata_list_structure_type = get_theme_mod($prefix . '_metadata_list_structur
 $exclude_title_metadata = get_theme_mod($prefix . '_show_title_metadata', 'yes') === 'no';
 $show_thumbnail_with_metadata = get_theme_mod($prefix . '_show_thumbnail', 'no') === 'yes';
 $display_section_labels = get_theme_mod($prefix . '_display_section_labels', 'yes') == 'yes';
+$items_related_to_this_position = get_theme_mod( $prefix . '_iphan_blocksy_items_related_to_this_position', 'bottom');
 
 if ($page_structure_type == 'type-gm' || $page_structure_type == 'type-mg') {
     $column_documents_attachments_width = 60;
@@ -145,35 +146,9 @@ do_action( 'tainacan-blocksy-single-item-after-title' );
 
 <div class="<?php echo esc_attr('tainacan-item-single tainacan-item-single--layout-'. $page_structure_type . ($column_documents_attachments_affix ? ' tainacan-item-single--affix-column' : '')) ?>" style="<?php echo esc_attr($template_columns_style) ?>">
 
-    <?php if ( count( $sidebar_template_area_sections ) > 0 ) {
-        $sidebar_section_content = '';
+    <?php
 
-        ob_start();
-
-        tainacan_the_metadata_sections( array_merge(
-            $sections_args,
-            array(
-                'metadata_sections__in' => $sidebar_template_area_sections,
-                'metadata_sections__not_in' => array_merge($tabs_template_area_sections, $default_template_area_sections, $collapses_template_area_sections),
-            )
-        ) );
-
-        $sidebar_section_content = ob_get_contents();
-        ob_end_clean();
-            
-        if ( !empty($sidebar_section_content) ) : ?>
-        <div class="tainacan-item-section tainacan-item-section--metadata-sections iphan-blocksy-metadata-section--sidebar">
-            <div class="metadata-section-layout--sidebar">
-                <?php 
-                    echo $sidebar_section_content;
-                ?>
-            </div>
-        </div>
-        <?php endif;
-    
-    }
-
-    if ($page_structure_type !== 'type-gtm') {
+    if ( $page_structure_type !== 'type-gtm' ) {
         tainacan_blocksy_get_template_part( 'template-parts/tainacan-item-single-document' );
         do_action( 'tainacan-blocksy-single-item-after-document' );  
 
@@ -181,7 +156,7 @@ do_action( 'tainacan-blocksy-single-item-after-title' );
         do_action( 'tainacan-blocksy-single-item-after-attachments' );
     }
 
-    if ($display_items_related_to_this) {
+    if ( $display_items_related_to_this && $items_related_to_this_position === 'top' ) {
         tainacan_blocksy_get_template_part( 'template-parts/tainacan-item-single-items-related-to-this' );
         do_action( 'tainacan-blocksy-single-item-after-items-related-to-this' );
     }
@@ -226,9 +201,37 @@ do_action( 'tainacan-blocksy-single-item-after-title' );
                 do_action( 'tainacan-blocksy-single-item-after-metadata' );
             ?>
         </div> 
-    <?php endif; ?>
+    <?php endif;
 
-    <?php if ( count( $collapses_template_area_sections ) > 0 ) : ?>
+    if ( count( $sidebar_template_area_sections ) > 0 ) {
+        $sidebar_section_content = '';
+
+        ob_start();
+
+        tainacan_the_metadata_sections( array_merge(
+            $sections_args,
+            array(
+                'metadata_sections__in' => $sidebar_template_area_sections,
+                'metadata_sections__not_in' => array_merge($tabs_template_area_sections, $default_template_area_sections, $collapses_template_area_sections),
+            )
+        ) );
+
+        $sidebar_section_content = ob_get_contents();
+        ob_end_clean();
+            
+        if ( !empty($sidebar_section_content) ) : ?>
+        <div class="tainacan-item-section tainacan-item-section--metadata-sections iphan-blocksy-metadata-section--sidebar">
+            <div class="metadata-section-layout--sidebar">
+                <?php 
+                    echo $sidebar_section_content;
+                ?>
+            </div>
+        </div>
+        <?php endif;
+    
+    }
+
+    if ( count( $collapses_template_area_sections ) > 0 ) : ?>
         <div class="tainacan-item-section tainacan-item-section--metadata-sections iphan-blocksy-metadata-section--collapses">
             <div class="metadata-section-layout--collapses">
                 <?php
@@ -308,6 +311,11 @@ do_action( 'tainacan-blocksy-single-item-after-title' );
 
     <?php endif; ?>
 
+    <?php if ( $display_items_related_to_this && $items_related_to_this_position === 'bottom' ) {
+        tainacan_blocksy_get_template_part( 'template-parts/tainacan-item-single-items-related-to-this' );
+        do_action( 'tainacan-blocksy-single-item-after-items-related-to-this' );
+    }
+    ?>
 </div>
 
 <?php 
