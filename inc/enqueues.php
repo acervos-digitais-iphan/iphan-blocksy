@@ -24,6 +24,11 @@ function iphan_blocksy_enqueue_scripts () {
 
 	// Enfileira a fonte de ícones Phosphor
 	wp_enqueue_style( 'phosphor-icons', 'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.min.css' );
+
+	// Estilos e scripts para o modal de login do Blocksy com o plugin de login único do Gov.br
+	if ( defined('MO_OAUTH_PLUGIN_BASENAME') ) 
+        wp_enqueue_style( 'iphan-blocksy-login-form-govbr', get_stylesheet_directory_uri() . '/assets/css/login-form-govbr.css', array(), $child_theme_version );
+    
 };
 add_action( 'wp_enqueue_scripts', 'iphan_blocksy_enqueue_scripts' );
 

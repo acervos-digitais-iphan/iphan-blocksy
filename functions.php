@@ -17,6 +17,7 @@ require_once get_stylesheet_directory() . '/inc/metadata-section-hooks.php';
 require_once get_stylesheet_directory() . '/inc/metadatum-hooks.php';
 require_once get_stylesheet_directory() . '/inc/tainacan-single-tweaks.php';
 require_once get_stylesheet_directory() . '/inc/tainacan-archive-tweaks.php';
+require_once get_stylesheet_directory() . '/inc/login-form-customizations.php';
 require_once get_stylesheet_directory() . '/inc/misc.php';
 require_once get_stylesheet_directory() . '/inc/footer-blocks.php';
 require_once get_stylesheet_directory() . '/inc/govbr-header-button.php';

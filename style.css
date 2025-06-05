@@ -4,7 +4,7 @@
  * Author: mateuswetah
  * Template: blocksy
  * Text Domain: iphan-blocksy
- * Version: 0.0.2
+ * Version: 0.0.8
  */
 :root {
     --iphan-blocksy-button-icon-width: 2.375em;
@@ -221,6 +221,7 @@
 }
 .cb-carousel-block {
     --wp--custom--carousel-block--navigation-size: 1.0em;
+    --wp--custom--carousel-block--navigation-sides-offset: 2vw;
 }
 .cb-carousel-block .swiper-button-next,
 .cb-carousel-block .swiper-button-prev {
