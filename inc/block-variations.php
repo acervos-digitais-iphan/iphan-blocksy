@@ -107,8 +107,10 @@ function iphan_blocksy_register_block_variations( $variations, $block_type ) {
                 'inputFontColorFocus' => 'palette-color-8',
                 'inputIconColor' => 'palette-color-8',
                 'inputIconColorFocus' => 'palette-color-8',
-                'inputBackgroundColor' => 'palette-color-10',
-                'inputBackgroundColorFocus' => 'palette-color-11'
+                'inputBorderColor' => 'palette-color-11',
+                'inputBorderColorFocus' => 'palette-color-12',
+                'inputBackgroundColor' => 'palette-color-11',
+                'inputBackgroundColorFocus' => 'palette-color-9'
             )
         );
 
