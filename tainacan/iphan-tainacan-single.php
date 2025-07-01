@@ -305,7 +305,7 @@ do_action( 'tainacan-blocksy-single-item-after-title' );
             </div>
 
             <?php 
-                remove_filter('tainacan-get-metadata-section-as-html-before-name--index-0', 'iphan_blocksy_add_checkbox_to_tabs_metadata_section' );
+                remove_filter( 'tainacan-get-metadata-section-as-html-before-name--index-0', 'iphan_blocksy_add_checkbox_to_tabs_metadata_section' );
             ?> 
         </div>
 
@@ -320,5 +320,5 @@ do_action( 'tainacan-blocksy-single-item-after-title' );
 
 <?php 
 remove_filter( 'tainacan-item-metadata-relationship-get-item-thumbnail', 'iphan_blocksy_set_relationship_thumbnail_size' );
-remove_filter('tainacan-get-metadata-section-as-html-before-name', 'iphan_blocksy_tweak_metadata_section_label' );
-remove_filter('tainacan-get-item-metadatum-as-html-before-title', 'iphan_blocksy_tweak_metadatum_label', 10, 2);
+remove_filter( 'tainacan-get-metadata-section-as-html-before-name', 'iphan_blocksy_tweak_metadata_section_label' );
+remove_filter( 'tainacan-get-item-metadatum-as-html-before-title', 'iphan_blocksy_tweak_metadatum_label', 10, 2 );

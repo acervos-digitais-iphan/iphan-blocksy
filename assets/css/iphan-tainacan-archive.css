@@ -68,6 +68,11 @@ body:not(.tainacan-admin-page) .tainacan-modal {
     width: calc(100% - 90px) !important;
     margin-left: 90px !important;
 }
+.theme-items-list #items-list-area #items-list-results .tainacan-masonry-container .tainacan-masonry-item .metadata-title p {
+    text-align: center !important;
+    line-height: 1.55em !important;
+    font-size: 1em !important;
+}
 
 /* Customizações para fazer o modo ficha exibir a imagem fora da caixa */
 .tainacan-records-container .tainacan-record .tainacan-record-thumbnail {

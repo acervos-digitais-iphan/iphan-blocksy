@@ -3,10 +3,16 @@
     background-color: var(--theme-palette-color-8);
     padding: 2.625rem;
 }
+@media screen and (max-width: 768px) {
+    .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar {
+        padding: 1rem;
+    }
+}
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--default,
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--collapses {
     max-width: var(--wp--style--global--content-size);
     margin-inline: auto;
+    width: 100%;
 }
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--tabs {
     background-color: var(--theme-palette-color-6);
@@ -36,6 +42,12 @@
     padding-left: calc(var(--wp--preset--spacing--50) + var(--wp--preset--spacing--40) + var(--wp--preset--spacing--30));
     border: var(--wp--preset--spacing--40) solid var(--theme-palette-color-8);
     background-size: var(--wp--preset--spacing--50) auto;
+}
+@media screen and (max-width: 768px) {
+    .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--tabs .tainacan-item-section--metadata {
+        padding: 0.5rem 1rem;
+        background-image: none !important;
+    }
 }
 .tainacan-item-single-page .tainacan-item-single {
     grid-template-areas: none;
@@ -192,6 +204,11 @@
     margin-bottom: 0;
     background-color: var(--theme-palette-color-8);
 }
+@media screen and (max-width: 768px) {
+    .tainacan-item-single-page .tainacan-item-section--metadata-sections .metadata-section-layout--collapses .tainacan-item-section {
+        padding: 0.5rem 1rem !important;
+    }
+}
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .metadata-section-layout--collapses label {
     display: flex;
     align-items: center;
@@ -243,13 +260,21 @@
     display: block;
     padding-left: var(--wp--preset--spacing--70);
     padding-right: var(--wp--preset--spacing--70);
-}   
+}  
+
+/* Espaçamento um pouco maior entre o rótulo e os valores de metadado */
+.tainacan-item-single-page .tainacan-item-single .tainacan-item-section__metadata h3 {
+    margin-bottom: .5rem;
+}
+
+/* Rótulo dos metadados compostos */
+.tainacan-item-single-page .tainacan-item-single h4 {
+    --theme-text-transform: none;
+    --theme-font-weight: 400;
+    --theme-font-size: 16px;
+}
 
 /* Tipografia das seções de metadados especiais */
-.tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar .tainacan-metadata-label {
-    --theme-font-weight: 400;
-    --theme-font-size: 18px;
-}
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar .tainacan-metadata-value {
     --theme-font-weight: 700;
     --theme-font-size: 18px;
@@ -267,13 +292,15 @@
 /* Metadados relacionados em formato de cards */
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 100%, 300px), 1fr));;
     gap: 1rem;
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum {
     padding: 1rem;
     background-color: var(--theme-palette-color-29);
     position: relative;
+}
+.tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum :has(.img) {
     min-height: 90px;
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum + .multivalue-separator { 
@@ -318,7 +345,7 @@
     text-transform: unset;
     --theme-font-size: 1em;
 }
-.tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-relationship-metadatum-header .label {
+.tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-relationship-metadatum-header img+.label {
     padding-left: 90px !important;
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-metadatum .related-metadadum-label {
@@ -327,16 +354,31 @@
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-metadatum {
     font-size: 0.875em;
+}
+.tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-relationship-metadatum-header:has(img) ~ .tainacan-metadatum {
     padding-left: 90px !important;
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-metadatum p {
     margin-bottom: 0 !important;
+}
+@media screen and (max-width: 768px) {
+    .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-relationship-metadatum-header img {
+        width: 45px;
+        max-width: 45px !important;
+    }
+    .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-relationship-metadatum-header img+.label {
+        padding-left: 45px !important;
+    }
+    .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-relationship-metadatum-header:has(img) ~ .tainacan-metadatum {
+        padding-left: 45px !important;
+    }   
 }
 
 /* Metadados com link de estilo especial */
 .tainacan-item-single-page .tainacan-metadata-value--buttons,
 .tainacan-item-single-page .tainacan-metadata-value--tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 .tainacan-item-single-page .tainacan-metadata-value--buttons .multivalue-separator,
@@ -357,7 +399,6 @@
     -webkit-user-select: none;
     user-select: none;
     text-align: center;
-    border-radius: var(--theme-button-border-radius, 3px);
     transition: all .12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     --has-link-decoration: var(--false);
     font-family: var(--theme-button-font-family,var(--theme-font-family) );
@@ -374,6 +415,16 @@
     border-radius: var(--iphan-blocksy-border-radius);
     background-color: var(--theme-button-background-initial-color);
 }
+.tainacan-item-single-page .tainacan-metadata-value--buttons a, {
+    --theme-button-background-initial-color: var(--theme-palette-color-15);
+    --theme-button-background-hover-color: var(--theme-palette-color-17);
+    border-radius: var(--iphan-blocksy-border-radius);
+}
+.tainacan-item-single-page .tainacan-metadata-value--tags a {
+    --theme-button-background-initial-color: var(--theme-palette-color-26);
+    --theme-button-background-hover-color: var(--theme-palette-color-25);
+    border-radius: 100em;
+}
 .tainacan-item-single-page .tainacan-metadata-value--buttons a:hover,
 .tainacan-item-single-page .tainacan-metadata-value--tags a:hover {
     transform: var(--theme-button-transform, translate3d(0, -3px, 0));
@@ -381,6 +432,24 @@
     border-color: var(--theme-button-border-hover-color);
     background-color: var(--theme-button-background-hover-color);
 }
+
+/* Metadado tipo URL */
+.tainacan-item-single-page .metadata-type-url .wp-block-button__link {
+    --theme-button-background-initial-color: var(--theme-palette-color-15);
+    --theme-button-background-hover-color: var(--theme-palette-color-17);
+    border-radius: var(--iphan-blocksy-border-radius);
+}
+
+/* Separador de metadados hierarquicos */
+.tainacan-item-single-page .hierarchy-separator {
+    align-self: center;
+    color: var(--theme-palette-color-5) !important;
+}
+
+/* Links de maneira geral */
+/* .tainacan-item-single-page a {
+    --theme-link-initial-color: var(--theme-text-color);
+} */
 
 /* Link de ver mais itens da galeria de itens relacionados a este */
 .tainacan-item-single-page .wp-block-group__inner-container:has(.related-items-view-more-link) {

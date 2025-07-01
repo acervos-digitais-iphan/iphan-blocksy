@@ -141,7 +141,6 @@ class IphanBlocksyMetadatumHooks {
 								<option value="default">Padrão (link)</option>
 								<option value="buttons">Botões</option>
 								<option value="tags">Tags</option>
-								<option value="cards">Cartões</option>
 							</select>
 						</span>
 					</div>

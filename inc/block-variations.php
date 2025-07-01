@@ -34,6 +34,9 @@ function iphan_blocksy_register_block_variations( $variations, $block_type ) {
                             'width' => '3px',
                             'style' => 'solid'
                         )
+                    ),
+                    'typography' => array(
+                        'fontWeight' => 600
                     )
                 )
             )
@@ -52,13 +55,13 @@ function iphan_blocksy_register_block_variations( $variations, $block_type ) {
                 'style' => array(
                     'border' => array(
                         'right' => array(
-                            'color' => '#bcb1a2',
+                            'color' => 'var(--theme-button-background-hover-color)',
                             'width' => '3px',
                             'style' => 'solid'
                         )
                     ),
-                    'color' => array(
-                        'background' => '#ede9e1',
+                    'typography' => array(
+                        'fontWeight' => 600
                     )
                 )
             )
@@ -97,8 +100,8 @@ function iphan_blocksy_register_block_variations( $variations, $block_type ) {
             'attributes'  => array(
                 'className' => 'is-style-iphan-blocksy-search',
                 'style' => array(
-                    'backgroundColor' => '#ede9e1',
-                    'color' => '#bcb1a2',
+                    'backgroundColor' => 'var(--theme-palette-color-29, #ede9e1)',
+                    'color' => 'var(--theme-palette-color-6,#bcb1a2)',
                     'border' => array(
                         'radius' => '100em',
                     )
