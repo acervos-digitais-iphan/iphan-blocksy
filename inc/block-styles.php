@@ -182,23 +182,34 @@ if ( function_exists('register_block_style') ) {
                         background-color: var(--theme-palette-color-18);
                         box-shadow: 0 0 0 3px var(--theme-palette-color-18);
                     }
-                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > .parent {
-                        position: relative;
+                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > span {
+                        position: absolute;
+                        bottom: 0;
+                        text-align: center;
+                        width: 100%;
+                        padding: 0.5em 1em;
+                        color: var(--theme-palette-color-8);
+                        font-weight: normal;
+                        background-color: var(--theme-palette-color-21);
+                        transition: box-shadow 0.2s ease;
                     }
-                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > .parent::before {
+                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:hover > span {
+                        background-color: var(--theme-palette-color-18);
+                    }
+                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > span::before {
                         content: "";
                         width: 16px;
                         height: 16px;
                         position: absolute;
-                        bottom: -8px;
+                        top: -8px;
                         left: calc(50% - 8px);
                         transition: background-color 0.2s ease;
                         z-index: 1;
                         border-radius: 100em;
                         background-color: var(--theme-palette-color-22);
                     }
-                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:hover > .parent::before,
-                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:focus > .parent::before {
+                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:hover > span::before,
+                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:focus > span::before {
                         background-color: var(--theme-palette-color-19);
                     }
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > .parent::after {
@@ -218,11 +229,6 @@ if ( function_exists('register_block_style') ) {
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item:hover a > .parent::after,
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item:focus a > .parent::after {
                         box-shadow: 0 -16px 20px 8px rgba(0,0,0,0.35) inset;
-                    }
-                    .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a > span {
-                        padding: 0 1em;
-                        color: var(--theme-palette-color-8);
-                        font-weight: normal;
                     }
                 '
             )

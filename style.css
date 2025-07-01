@@ -4,7 +4,7 @@
  * Author: mateuswetah
  * Template: blocksy
  * Text Domain: iphan-blocksy
- * Version: 0.0.9
+ * Version: 0.0.10
  */
 :root {
     --iphan-blocksy-button-icon-width: 2.375em;
@@ -415,7 +415,7 @@
 /*
  * Os estilos a seguir foiram implementados baseando-se no design do BCR. 
  * Para um uso mais genérico do tema, provavelmente devemos mover eles para
- * o o menu personalizar no futuro.
+ * o o menu personalizar no futuro (visto que não podemos criar um "tema neto").
  */
 :root {
     --iphan-blocksy-border-radius: 0 100% 100% 0;
