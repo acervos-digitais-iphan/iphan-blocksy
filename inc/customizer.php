@@ -60,7 +60,7 @@ function iphan_blocksy_custom_post_types_single_options( $options, $post_type, $
             $is_collection = in_array($post_type, $collections_post_types);
         }
 
-        if ( $is_collection ) {
+        if ( $is_collection || $post_type == 'tnc_blocksy_item'  ) {
             if (
                 isset( $options['options'] ) &&
                 isset( $options['options'][$post_type . '_single_section_options'] ) &&
