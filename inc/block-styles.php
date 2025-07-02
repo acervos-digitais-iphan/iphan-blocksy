@@ -191,6 +191,7 @@ if ( function_exists('register_block_style') ) {
                         color: var(--theme-palette-color-8);
                         font-weight: normal;
                         background-color: var(--theme-palette-color-21);
+                        box-sizing: border-box;
                         transition: box-shadow 0.2s ease;
                     }
                     .wp-block-tainacan-dynamic-items-list.is-style-iphan-blocksy-colorful .items-layout-grid .item-list-item a:hover > span {
