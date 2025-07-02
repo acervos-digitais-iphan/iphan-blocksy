@@ -418,7 +418,7 @@
     border-radius: var(--iphan-blocksy-border-radius);
     background-color: var(--theme-button-background-initial-color);
 }
-.tainacan-item-single-page .tainacan-metadata-value--buttons a, {
+.tainacan-item-single-page .tainacan-metadata-value--buttons a {
     --theme-button-background-initial-color: var(--theme-palette-color-15);
     --theme-button-background-hover-color: var(--theme-palette-color-17);
     border-radius: var(--iphan-blocksy-border-radius);
