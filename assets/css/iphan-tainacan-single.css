@@ -373,6 +373,9 @@
         padding-left: 45px !important;
     }   
 }
+.tainacan-item-single-page .tainacan-item-single .tainacan-item-section__metadata .tainacan-relationship-group .tainacan-relationship-metadatum .tainacan-metadatum {
+    padding-left: 0;
+}
 
 /* Metadados com link de estilo especial */
 .tainacan-item-single-page .tainacan-metadata-value--buttons,
