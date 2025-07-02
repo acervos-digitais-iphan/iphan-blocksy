@@ -3,3 +3,8 @@
     font-size: 1.75em;
     color: var(--tainacan-secondary);
 }
+/* Escoonde banner de avisos inserido pelo plugin de animação */
+.otter-animation-welcome-notice {
+    display: none;
+    visibility: hidden;
+}
