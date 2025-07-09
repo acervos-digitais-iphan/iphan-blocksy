@@ -3,7 +3,7 @@
  * Usa o TGM Plugin Activation para registrar plugins obrigatórios
  * e recomendados para o tema.
  */
-require_once get_stylesheet_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_stylesheet_directory() . '/vendor/class-tgm-plugin-activation.php';
 
 /**
  * Registra os plugins necessários para este tema.
