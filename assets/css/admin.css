@@ -3,8 +3,9 @@
     font-size: 1.75em;
     color: var(--tainacan-secondary);
 }
-/* Escoonde banner de avisos inserido pelo plugin de animação */
-.otter-animation-welcome-notice {
+/* Esconde banner de avisos inseridos pelo plugin de animação */
+.otter-animation-welcome-notice,
+.themeisle-sdk-notice {
     display: none;
     visibility: hidden;
 }
