@@ -3,7 +3,7 @@
  * Title: Linha 2 de rodapé do Iphan
  * Slug: iphan-blocksy/rodape-2
  * Description: Um padrão de rodapé com widgets.
- * Categories: iphan
+ * Categories: iphan-blocksy
  * Source: theme
  * Inserter: false 
  */
