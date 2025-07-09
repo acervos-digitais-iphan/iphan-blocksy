@@ -8,7 +8,7 @@ require_once get_stylesheet_directory() . '/inc/plugin-dependencies.php';
 require_once get_stylesheet_directory() . '/inc/singleton.php';
 require_once get_stylesheet_directory() . '/inc/utils.php';
 require_once get_stylesheet_directory() . '/inc/enqueues.php';
-require_once get_stylesheet_directory() . '/inc/phosphor-icons.php';
+require_once get_stylesheet_directory() . '/inc/class-phosphor-icons.php';
 require_once get_stylesheet_directory() . '/inc/block-styles.php';
 require_once get_stylesheet_directory() . '/inc/block-variations.php';
 require_once get_stylesheet_directory() . '/inc/block-patterns.php';
