@@ -4,7 +4,7 @@
  * Author: mateuswetah
  * Template: blocksy
  * Text Domain: iphan-blocksy
- * Version: 0.0.12
+ * Version: 0.0.13
  */
 :root {
     --iphan-blocksy-button-icon-width: 2.375em;
@@ -452,4 +452,9 @@
     border-left-width: 8px;
     border-right-width: 8px;
     border-bottom-width: 8px;
+}
+
+/* Itens "próximo" e "anterior" */
+.post-navigation {
+    margin-bottom: var(--wp--preset--spacing--50);
 }
