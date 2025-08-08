@@ -56,7 +56,7 @@
     gap: var(--wp--preset--spacing--50);
 }
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--gallery,
-.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--documents,
+.tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--document,
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--attachments,
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--items-related-to-this, 
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--metadata,
@@ -81,7 +81,7 @@
         gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--70);
     }
     .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--gallery,
-    .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--documents,
+    .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--document,
     .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--attachments,
     .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--items-related-to-this,
     .tainacan-item-single-page .tainacan-item-single:has(.iphan-blocksy-metadata-section--sidebar) > .iphan-blocksy-metadata-section--default,
