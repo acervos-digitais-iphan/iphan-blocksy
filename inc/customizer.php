@@ -22,7 +22,7 @@ function iphan_blocksy_options_panel($options) {
                         'sync' => true,
                     ],
                     'iphan_blocksy_item_tabs_background' => [
-                        'label' => 'Cor imagem de fundo das abas de itens',
+                        'label' => 'Imagem de fundo das abas de itens',
                         'type' => 'ct-background',
                         'design' => 'block:right',
                         'responsive' => true,
