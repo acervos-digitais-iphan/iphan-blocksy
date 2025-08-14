@@ -55,6 +55,9 @@
     grid-template-rows: auto;
     gap: var(--wp--preset--spacing--50);
 }
+.tainacan-item-single-page .tainacan-item-section {
+    margin-bottom : 0; /* O espaçamento vertical é compensado pelo gap da regra acima */
+}
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--gallery,
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--document,
 .tainacan-item-single-page .tainacan-item-single > .tainacan-item-section--attachments,
@@ -77,7 +80,7 @@
 
 @media only screen and (min-width: 960px) {
     .tainacan-item-single-page .tainacan-item-single:has(.iphan-blocksy-metadata-section--sidebar) {
-        grid-template-columns: 20% calc(80% - var(--wp--preset--spacing--70));
+        grid-template-columns: 25% calc(75% - var(--wp--preset--spacing--70));
         gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--70);
     }
     .tainacan-item-single-page .tainacan-item-single:not(.tainacan-item-single.tainacan-item-single--layout-type-gm):has(.iphan-blocksy-metadata-section--sidebar) > .tainacan-item-section--gallery,
@@ -116,7 +119,7 @@
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .metadata-section-layout--tabs {
     gap: 0.688rem 0;
     overflow: clip;
-    margin-top: var(--wp--preset--spacing--70);
+    margin-top: var(--wp--preset--spacing--50);
     margin-bottom: var(--wp--preset--spacing--70);
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .metadata-section-layout--tabs label {
@@ -277,7 +280,7 @@
 /* Tipografia das seções de metadados especiais */
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar .tainacan-metadata-value {
     --theme-font-weight: 700;
-    --theme-font-size: 18px;
+    --theme-font-size: 16px;
 }
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar .tainacan-compound-group .label {
     text-transform: none;
@@ -294,6 +297,7 @@
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 100%, 300px), 1fr));;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 .tainacan-item-single-page .tainacan-item-section--metadata-sections .tainacan-relationship-group .tainacan-relationship-metadatum {
     padding: 1rem;
@@ -442,6 +446,9 @@
     --theme-button-background-hover-color: var(--theme-palette-color-17);
     border-radius: var(--iphan-blocksy-border-radius);
 }
+.tainacan-item-single-page .metadata-type-url .wp-block-buttons {
+    margin-bottom: 1.125rem;
+}
 
 /* Separador de metadados hierarquicos */
 .tainacan-item-single-page .hierarchy-separator {
@@ -479,4 +486,12 @@
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar .tainacan-metadata-value:hover a,
 .tainacan-item-single-page .tainacan-item-single .iphan-blocksy-metadata-section--sidebar .tainacan-metadata-value:focus a {
     transform: translateY(-1px) scaleY(0.96);
+}
+
+/* Força Documentos e Anexos PDF a terem aspect ratio 3/4 ao invés de 4/3 */
+.tainacan-embed-aspect-4-3:has(iframe[src$=".pdf"]) {
+    max-width: calc(var(--tainacan-media-main-carousel-height, 60vh) * 3 / 4) !important;
+}
+.tainacan-embed-aspect-4-3:has(iframe[src$=".pdf"]) .tainacan-content-embed__wrapper::before {
+    padding-top: 133.33% !important; /* 4 / 3 * 100 */
 }
