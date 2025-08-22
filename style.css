@@ -4,7 +4,7 @@
  * Author: mateuswetah
  * Template: blocksy
  * Text Domain: iphan-blocksy
- * Version: 0.0.15
+ * Version: 1.0.0
  */
 :root {
     --iphan-blocksy-button-icon-width: 2.375em;
@@ -185,6 +185,7 @@
     max-width: 100%;
     max-height: 100%;
     background-color: var(--theme-palette-color-21);
+    text-align: left;
 }
 .tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:hover::before,
 .tainacan-media-component .tainacan-media-component__swiper-main li.swiper-slide .swiper-slide-content .swiper-slide-metadata:focus::before,

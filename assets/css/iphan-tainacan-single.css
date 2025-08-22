@@ -409,10 +409,10 @@
     transition: all .12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     --has-link-decoration: var(--false);
     font-family: var(--theme-button-font-family,var(--theme-font-family) );
-    font-size: var(--theme-button-font-size);
+    font-size: 0.938rem;
     font-weight: var(--theme-button-font-weight);
     font-style: var(--theme-button-font-style);
-    line-height: var(--theme-button-line-height);
+    line-height: var(--theme-button-line-height, 1.1);
     letter-spacing: var(--theme-button-letter-spacing);
     text-transform: var(--theme-button-text-transform);
     -webkit-text-decoration: var(--theme-button-text-decoration);

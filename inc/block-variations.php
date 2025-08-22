@@ -103,7 +103,7 @@ function iphan_blocksy_register_block_variations( $variations, $block_type ) {
                     'backgroundColor' => 'var(--theme-palette-color-29, #ede9e1)',
                     'color' => 'var(--theme-palette-color-6,#bcb1a2)',
                     'border' => array(
-                        'radius' => '100em',
+                        'radius' => '2.5em',
                     )
                 ),
                 'inputFontColor' => 'palette-color-8',

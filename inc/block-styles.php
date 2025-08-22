@@ -125,6 +125,10 @@ if ( function_exists('register_block_style') ) {
                         background-color: var(--theme-form-field-background-focus-color);
                         --theme-icon-size: 20px;
                     }
+                    .is-style-iphan-blocksy-search .ct-search-form[data-form-controls="inside"] input[type="search"] {
+                        margin-right: calc(-0.5 * var(--search-button-size, var(--theme-form-field-height, 40px)));
+                        padding-right: calc(1em + 0.5 * var(--search-button-size, var(--theme-form-field-height, 40px)));
+                    }
                 '
             )
         );
