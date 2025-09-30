@@ -29,6 +29,9 @@ function iphan_blocksy_enqueue_scripts () {
 	if ( defined('MO_OAUTH_PLUGIN_BASENAME') ) 
         wp_enqueue_style( 'iphan-blocksy-login-form-govbr', get_stylesheet_directory_uri() . '/assets/css/login-form-govbr.css', array(), $child_theme_version );
     
+	// Enfileira fonte de ícones do Tainacan. No plugin de compatibilidade entre Tainacan e o tema, 
+	// essas fontes são opcionais, mas como usamos em carrosséis queremos forçar este uso.
+	wp_enqueue_style( 'tainacan-icons' );
 };
 add_action( 'wp_enqueue_scripts', 'iphan_blocksy_enqueue_scripts' );
 
